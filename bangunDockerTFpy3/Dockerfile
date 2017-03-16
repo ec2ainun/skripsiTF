@@ -13,7 +13,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install scikit-learn Pillow
+RUN pip3 install scikit-learn  Pillow
 RUN rm -rf /notebooks/*
+ADD *.sh /notebooks/
 WORKDIR /notebooks
+RUN ["/bin/bash", "-c", "installOpenCV.sh"]  
 CMD ["/run_jupyter.sh"]

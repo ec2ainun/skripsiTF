@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install scikit-learn  Pillow
-ADD *.sh /
+ADD *.sh ~/
 RUN bash installOpenCV.sh 
 RUN rm -rf /notebooks/*
 WORKDIR /notebooks

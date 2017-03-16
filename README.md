@@ -1,5 +1,5 @@
 # Skripsi
-Judul : IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUSIA MENGGUNAKAN TENSORFLOW 
+IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUSIA MENGGUNAKAN TENSORFLOW 
 
 ## Why?
    Pada tahun 2017 ini, riset pada topik deep learning sangat popular dikalangan peneliti perusahaan teknologi terkemuka. Seperti Google dan Tesla dengan autonomous car sehingga memungkinkan meminimalisir tingkat kecelakaan, Amazon dengan amazon Go yang memungkinkan pembeli langsung mengambil produk dan membayar nya secara otomatis di saat keluar dari toko, serta Facebook dan Snapchat yang mengembangkan riset dalam pengenalan wajah. Deep Learning sendiri merupakan cabang dari machine learning yang bertujuan memodelkan data yang memiliki tingkat abstraksi tinggi sehingga memungkinkan mengetahui makna dari kumpulan data, hal ini terinspirasi dengan jaringan syaraf tiruan dengan banyak layer tersembunyi.  

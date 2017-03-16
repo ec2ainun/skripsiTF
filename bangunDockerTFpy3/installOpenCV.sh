@@ -5,7 +5,6 @@
 # Update dan upgrade OS ubuntu
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
 sudo apt-get -y autoremove
 
 # Build tools:
@@ -43,7 +42,7 @@ unzip opencv.zip
 wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
 unzip opencv_contrib.zip
 
-cd /opencv-3.1.0/
+cd opencv-3.1.0/
 mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE \

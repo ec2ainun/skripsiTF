@@ -17,4 +17,5 @@ RUN pip3 install scikit-learn pyreadline Pillow
 RUN rm -rf /notebooks/*
 ADD *.sh /notebooks/
 WORKDIR /notebooks
+CMD ["/installOpenCV.sh"]
 CMD ["/run_jupyter.sh"]

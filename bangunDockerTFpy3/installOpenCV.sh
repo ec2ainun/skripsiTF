@@ -3,12 +3,12 @@
 
 # Created by m.ec2.a.najib@gmail.com
 # Update dan upgrade OS ubuntu
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y autoremove
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y update
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y autoremove
 
 # Build tools:
-sudo apt-get install -y build-essential cmake pkg-config nano wget
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake pkg-config nano wget
 
 # INSTALL THE DEPENDENCIES
 # OpenCV merupakan library untuk memproses, dan mengenali gambar (Image processing & computer vision). 
@@ -34,7 +34,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libatlas-base-dev gfortra
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 
 # Python dev:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python2.7-dev python3.5-dev python-tk python-numpy python3-tk python3-numpy
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python3-dev python-tk python-numpy python3-tk python3-numpy
 
 # Mendapatkan library openCV dari Github dengan vers 3.1.0
 wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip

@@ -9,7 +9,7 @@ sudo apt-get -y dist-upgrade
 sudo apt-get -y autoremove
 
 # Build tools:
-sudo apt-get install -y build-essential cmake pkg-config
+sudo apt-get install -y build-essential cmake pkg-config nano wget
 
 # INSTALL THE DEPENDENCIES
 # OpenCV merupakan library untuk memproses, dan mengenali gambar (Image processing & computer vision). 

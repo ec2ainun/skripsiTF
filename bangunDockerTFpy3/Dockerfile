@@ -17,5 +17,5 @@ RUN pip3 install scikit-learn  Pillow
 RUN rm -rf /notebooks/*
 ADD *.sh /notebooks/
 WORKDIR /notebooks
-RUN ["/bin/bash", "installOpenCV.sh"]  
+RUN bash installOpenCV.sh 
 CMD ["/run_jupyter.sh"]

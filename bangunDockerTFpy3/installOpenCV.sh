@@ -17,24 +17,24 @@ sudo apt-get install -y build-essential cmake pkg-config nano wget
 # OpenCV perlu image I/O librari lainya yang memfasilitasi proses loading dan decoding.
 
 # Image I/O
-sudo apt-get install -y libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
 
 # Untuk memproses stream video dan access frame dari kamera, 
 # perlu menambahkan beberapa library dibawah
 # Video I/O:
-sudo apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
 
 # GUI 
-sudo apt-get install -y libgtk-3-dev
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libgtk-3-dev
 
 # library untuk mengoptimasi beberapa fungsionalitas didalam OpenCV, seperti perkalian matriks:
-sudo apt-get install -y libatlas-base-dev gfortran
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libatlas-base-dev gfortran
 
 # Parallelism and linear algebra libraries:
-sudo apt-get install -y libtbb-dev libeigen3-dev
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 
 # Python dev:
-sudo apt-get install -y python2.7-dev python3.5-dev python-tk python-numpy python3-tk python3-numpy
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python2.7-dev python3.5-dev python-tk python-numpy python3-tk python3-numpy
 
 # Mendapatkan library openCV dari Github dengan vers 3.1.0
 wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip

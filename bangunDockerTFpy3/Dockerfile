@@ -14,8 +14,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-ins
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install scikit-learn Pillow
-ADD *.sh ~/
-WORKDIR ~/
+ADD *.sh /installOpen/
+WORKDIR /installOpen
 RUN bash installOpenCV.sh 
 RUN rm -rf /notebooks/*
 ADD *.sh /notebooks/

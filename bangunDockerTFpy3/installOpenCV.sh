@@ -34,7 +34,14 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libatlas-base-dev gfortra
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 
 # Python dev:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python3-dev python-tk python-numpy python3-tk python3-numpy
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python3-dev python-tk python-numpy python3-tk python3-numpy \
+    && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# matplotlib digunakan untuk membuat 2D plots dari array 
+sudo DEBIAN_FRONTEND=noninteractivesudo apt-get build-dep -y python-matplotlib
+sudo DEBIAN_FRONTEND=noninteractivesudo apt-get install -y python-matplotlib
 
 # Mendapatkan library openCV dari Github dengan vers 3.1.0
 sudo wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
@@ -52,7 +59,10 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D OPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib-3.1.0/modules \
     -D BUILD_EXAMPLES=ON ..
 make -j2
+#ubah menjadi -j4 untuk 4 core processor
+#make -4
 sudo make install
 sudo ldconfig
+sudo ln /dev/null /dev/raw1394
 
 # Thanks.. ^^

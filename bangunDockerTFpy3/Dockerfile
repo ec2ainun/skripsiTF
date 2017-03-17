@@ -7,15 +7,17 @@ FROM gcr.io/tensorflow/tensorflow:latest-py3
 MAINTAINER Moch. Ainun Najib <m.ec2.a.najib@gmail.com>
 
 # Pillow needs libjpeg by default as of 3.0.
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-install-recommends \
         libjpeg8-dev \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install scikit-learn  Pillow
+RUN pip3 install scikit-learn Pillow
 ADD *.sh ~/
+WORKDIR ~/
 RUN bash installOpenCV.sh 
 RUN rm -rf /notebooks/*
+ADD *.sh /notebooks/
 WORKDIR /notebooks
 CMD ["/run_jupyter.sh"]

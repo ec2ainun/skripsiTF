@@ -37,22 +37,22 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python3-dev python-tk python-numpy python3-tk python3-numpy
 
 # Mendapatkan library openCV dari Github dengan vers 3.1.0
-wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+sudo wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
 unzip opencv.zip
-wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+sudo wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
 unzip opencv_contrib.zip
 
 cd opencv-3.1.0/
 mkdir build
-#cd build
-#cmake -D CMAKE_BUILD_TYPE=RELEASE \
-#    -D CMAKE_INSTALL_PREFIX=/usr/local \
-#    -D INSTALL_PYTHON_EXAMPLES=ON \
-#    -D INSTALL_C_EXAMPLES=OFF \
-#    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules \
-#    -D BUILD_EXAMPLES=ON ..
-#make -j2
-#sudo make install
-#sudo ldconfig
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D OPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib-3.1.0/modules \
+    -D BUILD_EXAMPLES=ON ..
+make -j2
+sudo make install
+sudo ldconfig
 
 # Thanks.. ^^

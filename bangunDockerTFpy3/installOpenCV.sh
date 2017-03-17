@@ -65,4 +65,8 @@ sudo make install
 sudo ldconfig
 sudo ln /dev/null /dev/raw1394
 
+cd ~/.jupyter
+rm jupyter_notebook_config.py
+cp /installOpen/jupyter_notebook_config.py .
+
 # Thanks.. ^^

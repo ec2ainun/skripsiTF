@@ -8,6 +8,7 @@ MAINTAINER Moch. Ainun Najib <m.ec2.a.najib@gmail.com>
 
 RUN pip3 install scikit-learn Pillow
 ADD *.sh /installOpen/
+ADD *.py /installOpen/
 WORKDIR /installOpen
 RUN bash installOpenCV.sh 
 RUN rm -rf /notebooks/*

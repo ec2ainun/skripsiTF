@@ -12,6 +12,6 @@ ADD *.py /installOpen/
 WORKDIR /installOpen
 RUN bash installOpenCV.sh 
 RUN rm -rf /notebooks/*
-ADD *.sh /notebooks/
+ADD *.ipynb /notebooks/
 WORKDIR /notebooks
 CMD ["/run_jupyter.sh"]

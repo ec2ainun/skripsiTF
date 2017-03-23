@@ -8,7 +8,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y autoremove
 
 # Build tools:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake pkg-config nano wget
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake pkg-config nano wget git
 
 # INSTALL THE DEPENDENCIES
 # OpenCV merupakan library untuk memproses, dan mengenali gambar (Image processing & computer vision). 

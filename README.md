@@ -35,6 +35,7 @@ localhost:8888
 dimana.alamat.server.anda:8888
 ```
    Lalu masukan password **makasih**
+   
    **Just it!** done, up, and running. 
 
 ### Checklist

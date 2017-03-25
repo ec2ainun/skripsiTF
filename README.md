@@ -8,7 +8,7 @@ IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUS
    
    Pada tanggal 15 Februari 2017, Tensorflow telah berumur 1 tahun dan telah rilis versi stabil 1.0. Tensorflow merupakan open source software library  yang digunakan untuk komputasi numeric berdasarkan konsep flow graph yang awalnya dikembangan oleh peneliti dan developer yang mengerjakan project Google Brain untuk meneliti lebih lanjut bidang deep learning. Perusahaan-perusahaan yang saat ini menggunakan tensorflow pada produk mereka antara lain: Airbnb, Dropbox, Google, Google Deepmind, Intel, IBM, Snapchat, Twitter, Uber dan lainnya. Deep learning sendiri memerlukan banyak data training dan hardware computasi tinggi seperti GPU NVIDIA® Tesla® K80 untuk memberikan hasil yang cukup memuaskan, sehingga dalam penyusunan skripsi ini peneliti hanya mengklasifikasikan 10 wajah mahasiswa dan dosen. Serta banyaknya data yang diambil perwajah dan akurasi yang didapatkan merupakan tujuan awal penyusunan skripsi ini.  
 
-## Build docker dan dockerfile
+## Install Tensorflow menggunakan Docker 
    Jika anda kurang familiar dengan Docker, anda bisa mengunjungi repository saya lainnya yang menjelaskan sesimpel mungkin apa itu Docker, bagaimana Getting Started dengan Docker, serta Pengetahuan yang **Sangat Cukup** untuk memulai Docker. [Docker Simplefied](https://ec2ainun.github.io/DockerTF/)
    
    Langkah pertama yaitu clone repository ini dengan perintah:   
@@ -46,7 +46,7 @@ IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUS
 
 ### Checklist
 - [x] Why?
-- [x] Build docker dan dockerfile
+- [x] Install Tensorflow menggunakan Docker
 - [ ] Tutorial tensorflow
 - [ ] Sejarah CNN (Convolutional Neural Network)
 - [ ] Penjelasan Arsitektur CNN

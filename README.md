@@ -43,11 +43,15 @@ IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUS
    
    **Just it!** 
    Done, up, and running. 
+   
+## Tutorial Tensorflow
+- Penjelasan Pengantar bahasa python : [Pengantar Python 3](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/python3.4.ipynb)
+- Penjelasan Pengantar TensorFlow : [Pengantar TensorFlow](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/Tensor.ipynb)
 
 ### Checklist
 - [x] Why?
 - [x] Install Tensorflow menggunakan Docker
-- [ ] Tutorial tensorflow
+- [x] Tutorial Tensorflow
 - [ ] Sejarah CNN (Convolutional Neural Network)
 - [ ] Penjelasan Arsitektur CNN
 - [ ] Implementasi Arsitektur

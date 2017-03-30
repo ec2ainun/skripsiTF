@@ -47,7 +47,7 @@ IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUS
 ## Tutorial Tensorflow
 - Penjelasan Pengantar bahasa Python : [Pengantar Python 3](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/python3.4.ipynb)
 - Penjelasan Pengantar TensorFlow : [Pengantar TensorFlow](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/Tensor.ipynb)
-- Penjelasan Operasi Dasar TensorFlow : [Operasi](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/OperasiTF.ipynb)
+- Penjelasan Operasi Dasar TensorFlow : [Operasi TensorFlow](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/OperasiTF.ipynb)
 
 ### Checklist
 - [x] Why?

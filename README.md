@@ -1,5 +1,5 @@
-# Judul
-IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUSIA MENGGUNAKAN TENSORFLOW 
+## Judul
+#### IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUSIA MENGGUNAKAN TENSORFLOW 
 
 ## Why?
    Pada tahun 2017, riset pada topik deep learning sangat popular dikalangan peneliti perusahaan teknologi terkemuka. Seperti Google dan Tesla dengan autonomous car sehingga memungkinkan meminimalisir tingkat kecelakaan, Amazon dengan amazon Go yang memungkinkan pembeli langsung mengambil produk dan membayar nya secara otomatis di saat keluar dari toko, serta Facebook dan Snapchat yang mengembangkan riset dalam pengenalan wajah. Deep Learning sendiri merupakan cabang dari machine learning yang bertujuan memodelkan data yang memiliki tingkat abstraksi tinggi sehingga memungkinkan mengetahui makna dari kumpulan data, hal ini terinspirasi dengan jaringan syaraf tiruan dengan banyak layer tersembunyi.  
@@ -9,14 +9,14 @@ IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUS
    Pada tanggal 15 Februari 2017, Tensorflow telah berumur 1 tahun dan telah rilis versi stabil 1.0. Tensorflow merupakan open source software library  yang digunakan untuk komputasi numeric berdasarkan konsep flow graph yang awalnya dikembangan oleh peneliti dan developer yang mengerjakan project Google Brain untuk meneliti lebih lanjut bidang deep learning. Perusahaan-perusahaan yang saat ini menggunakan tensorflow pada produk mereka antara lain: Airbnb, Dropbox, Google, Google Deepmind, Intel, IBM, Snapchat, Twitter, Uber dan lainnya. Deep learning sendiri memerlukan banyak data training dan hardware computasi tinggi seperti GPU NVIDIA® Tesla® K80 untuk memberikan hasil yang cukup memuaskan, sehingga dalam penyusunan skripsi ini peneliti hanya mengklasifikasikan 10 wajah mahasiswa dan dosen. Serta banyaknya data yang diambil perwajah dan akurasi yang didapatkan merupakan tujuan awal penyusunan skripsi ini.  
 
 ## Install Tensorflow menggunakan Docker 
-   Jika anda kurang familiar dengan Docker, anda bisa mengunjungi repository saya lainnya yang menjelaskan sesimpel mungkin apa itu Docker, bagaimana Getting Started dengan Docker, serta Pengetahuan yang **Sangat Cukup** untuk memulai Docker. [Docker Simplefied](https://ec2ainun.github.io/DockerTF/)
+   Jika anda kurang familiar dengan Docker, anda bisa mengunjungi repository saya lainnya yang menjelaskan sesimpel mungkin apa itu Docker, bagaimana Getting Started dengan Docker, serta Pengetahuan yang **Sangat Cukup** untuk memulai Docker [Docker Simplefied](https://ec2ainun.github.io/DockerTF/).
    
    Langkah pertama yaitu clone repository ini dengan perintah:   
 ```sh
    > git clone https://github.com/ec2ainun/skripsiTF.git
 ```
    
-   Langkah selanjutnya yaitu memilih workspace yang tepat bagi anda, masuk ke folder TFcpuPy2+OpenCV untuk membangun arsitektur dengan bahasa python versi 2.7.6 atau masuk ke TFcpuPy3+OpenCV untuk membangun arsitektur dengan bahasa python versi 3.4.3. Didalam kedua folder tersebut telah terdapat Dockerfile yang akan menginstall semua dependencies yang anda butuhkan untuk memulai dalam belajar dan menggunakan TensorFlow untuk Computer Vision, Dockerfile ini telah tersedia perintah-perintah untuk menginstall library seperti: numpy, scipy, scikit-learn, matplotlib, serta OpenCV. untuk GPU support sementara belum di test oleh penulis.
+   Langkah selanjutnya yaitu memilih workspace yang tepat bagi anda, masuk ke folder TFcpuPy2+OpenCV untuk membangun arsitektur dengan bahasa python versi 2.7.6 atau masuk ke TFcpuPy3+OpenCV untuk membangun arsitektur dengan bahasa python versi 3.4.3. Didalam kedua folder tersebut telah terdapat Dockerfile yang akan menginstall semua dependencies yang anda butuhkan untuk memulai dalam belajar dan menggunakan TensorFlow untuk Computer Vision, Dockerfile ini telah tersedia perintah-perintah untuk menginstall library seperti: numpy, scipy, scikit-learn, matplotlib, serta OpenCV. **(build succeed on DigitalOcean Server)** untuk GPU support sementara belum di test oleh penulis.
    
    Langkah berikutnya yaitu build image:
 ```sh
@@ -39,7 +39,7 @@ IMPLEMENTASI ALGORITMA CONVOLUTIONAL NEURAL NETWORK DALAM PENGENALAN WAJAH MANUS
 ```sh
    > dimana.alamat.server.anda:8888
 ```
-   Lalu masukan password **makasih**
+   Lalu masukan password: **makasih**
    
    **Just it!** 
    Done, up, and running. 

@@ -3,13 +3,13 @@
 
 # Created by m.ec2.a.najib@gmail.com
 # Update dan upgrade OS ubuntu
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
-sudo apt-get -y autoremove
+DEBIAN_FRONTEND=noninteractive apt-get -y update
+DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -y autoremove
 
 # Build tools:
-sudo apt-get install -y build-essential cmake pkg-config
+DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake pkg-config
 
 # INSTALL THE DEPENDENCIES
 # OpenCV merupakan library untuk memproses, dan mengenali gambar (Image processing & computer vision). 
@@ -18,24 +18,24 @@ sudo apt-get install -y build-essential cmake pkg-config
 # OpenCV perlu image I/O librari lainya yang memfasilitasi proses loading dan decoding.
 
 # Image I/O
-sudo apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
+DEBIAN_FRONTEND=noninteractive apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
 
 # Untuk memproses stream video dan access frame dari kamera, 
 # perlu menambahkan beberapa library dibawah
 # Video I/O:
-sudo apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
+DEBIAN_FRONTEND=noninteractive apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
 
 # GUI 
-sudo apt-get install libgtk-3-dev
+DEBIAN_FRONTEND=noninteractive apt-get install libgtk-3-dev
 
 # library untuk mengoptimasi beberapa fungsionalitas didalam OpenCV, seperti perkalian matriks:
-sudo apt-get install libatlas-base-dev gfortran
+DEBIAN_FRONTEND=noninteractive apt-get install libatlas-base-dev gfortran
 
 # Parallelism and linear algebra libraries:
-sudo apt-get install -y libtbb-dev libeigen3-dev
+DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 
 # Python dev:
-sudo apt-get install -y python2.7-dev python3.5-dev python-tk python-numpy python3-tk python3-numpy
+DEBIAN_FRONTEND=noninteractive apt-get install -y python2.7-dev python3.5-dev python-tk python-numpy python3-tk python3-numpy
 
 # Mendapatkan library openCV dari Github dengan vers 3.1.0
 wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
@@ -53,7 +53,13 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules \
     -D BUILD_EXAMPLES=ON ..
 make -j2
-sudo make install
-sudo ldconfig
+#ubah menjadi -j4 untuk 4 core processor
+#make -4
+make install
+ldconfig
+ln /dev/null /dev/raw1394
 
+cd ~/.jupyter
+rm jupyter_notebook_config.py
+cp /installOpen/jupyter_notebook_config.py .
 # Thanks.. ^^

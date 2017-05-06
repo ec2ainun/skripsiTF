@@ -3,13 +3,13 @@
 
 # Created by m.ec2.a.najib@gmail.com
 # Update dan upgrade OS ubuntu
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y update
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y update
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y autoremove
+DEBIAN_FRONTEND=noninteractive apt-get -y update
+DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -y update
+DEBIAN_FRONTEND=noninteractive apt-get -y autoremove
 
 # Build tools:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake pkg-config nano wget git
+DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake pkg-config nano wget git
 
 # INSTALL THE DEPENDENCIES
 # OpenCV merupakan library untuk memproses, dan mengenali gambar (Image processing & computer vision). 
@@ -18,36 +18,36 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake pkg
 # OpenCV perlu image I/O librari lainya yang memfasilitasi proses loading dan decoding.
 
 # Image I/O
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
+DEBIAN_FRONTEND=noninteractive apt-get install -y libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
 
 # Untuk memproses stream video dan access frame dari kamera, 
 # perlu menambahkan beberapa library dibawah
 # Video I/O:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
+DEBIAN_FRONTEND=noninteractive apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
 
 # GUI 
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libgtk-3-dev
+DEBIAN_FRONTEND=noninteractive apt-get install -y libgtk-3-dev
 
 # library untuk mengoptimasi beberapa fungsionalitas didalam OpenCV, seperti perkalian matriks:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libatlas-base-dev gfortran
+DEBIAN_FRONTEND=noninteractive apt-get install -y libatlas-base-dev gfortran
 
 # Parallelism and linear algebra libraries:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
+DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 
 # Python dev:
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python3-dev python-tk python-numpy python3-tk python3-numpy \
+DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python3-dev python-tk python-numpy python3-tk python3-numpy \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # matplotlib digunakan untuk membuat 2D plots dari array 
-sudo DEBIAN_FRONTEND=noninteractivesudo apt-get build-dep -y python-matplotlib
-sudo DEBIAN_FRONTEND=noninteractivesudo apt-get install -y python-matplotlib
+DEBIAN_FRONTEND=noninteractivesudo apt-get build-dep -y python-matplotlib
+DEBIAN_FRONTEND=noninteractivesudo apt-get install -y python-matplotlib
 
 # Mendapatkan library openCV dari Github dengan vers 3.1.0
-sudo wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
 unzip opencv.zip
-sudo wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
 unzip opencv_contrib.zip
 
 cd opencv-3.1.0/
@@ -61,10 +61,10 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_EXAMPLES=ON ..
 make -j2
 #ubah menjadi -j4 untuk 4 core processor
-#make -4
-sudo make install
-sudo ldconfig
-sudo ln /dev/null /dev/raw1394
+#make -j4
+make install
+ldconfig
+ln /dev/null /dev/raw1394
 
 cd ~/.jupyter
 rm jupyter_notebook_config.py

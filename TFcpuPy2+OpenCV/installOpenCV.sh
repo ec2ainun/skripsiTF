@@ -61,7 +61,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_EXAMPLES=ON ..
 make -j2
 #ubah menjadi -j4 untuk 4 core processor
-#make -4
+#make -j4
 make install
 ldconfig
 ln /dev/null /dev/raw1394

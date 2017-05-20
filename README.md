@@ -49,10 +49,15 @@
 - Penjelasan Pengantar TensorFlow : [Pengantar TensorFlow](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/Tensor.ipynb)
 - Penjelasan Operasi Dasar TensorFlow : [Operasi TensorFlow](http://nbviewer.jupyter.org/github/ec2ainun/notebooks/blob/master/OperasiTF.ipynb)
 
+## P1
+- preprosessing : [kulit approach](http://nbviewer.jupyter.org/github/ec2ainun/tugas/blob/master/skripsiP1preproses.ipynb)
+- training : [Tensorflow approach](http://nbviewer.jupyter.org/github/ec2ainun/tugas/blob/master/skripsiP1training.ipynb)
+
 ### Checklist
 - [x] Why?
 - [x] Install Tensorflow menggunakan Docker
 - [x] Tutorial Tensorflow
+- [x] P1
 - [ ] Sejarah CNN (Convolutional Neural Network)
 - [ ] Penjelasan Arsitektur CNN
 - [ ] Implementasi Arsitektur

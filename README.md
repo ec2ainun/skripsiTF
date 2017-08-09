@@ -15,7 +15,9 @@
    > git clone https://github.com/ec2ainun/skripsiTF.git
 ```
    
-   ~~Langkah selanjutnya yaitu memilih workspace yang tepat bagi anda, masuk ke folder TFcpuPy2+OpenCV untuk membangun arsitektur dengan bahasa python versi 2.7.6 atau~~ [Python2 is deprecated on latest Jupyter Notebook and also version 2 will be shutdown on 2020](http://blog.jupyter.org/2017/04/19/release-of-ipython-6-0/) masuk ke TFcpuPy3+OpenCV untuk membangun arsitektur dengan bahasa python versi 3.4.3. Didalam kedua folder tersebut telah terdapat Dockerfile yang akan menginstall semua dependencies yang anda butuhkan untuk memulai dalam belajar dan menggunakan TensorFlow untuk Computer Vision, Dockerfile ini telah tersedia perintah-perintah untuk menginstall library seperti: numpy, scipy, scikit-learn, matplotlib, serta OpenCV. **(build succeed on DigitalOcean Server)** untuk GPU support sementara belum di test oleh penulis.
+   ~~Langkah selanjutnya yaitu memilih workspace yang tepat bagi anda, masuk ke folder TFcpuPy2+OpenCV untuk membangun arsitektur dengan bahasa python versi 2.7.6 atau~~
+   [Python2 is deprecated on latest Jupyter Notebook and also version 2 will be shutdown on 2020](http://blog.jupyter.org/2017/04/19/release-of-ipython-6-0/) 
+   Masuk ke TFcpuPy3+OpenCV untuk membangun arsitektur dengan bahasa python versi 3.4.3. Didalam kedua folder tersebut telah terdapat Dockerfile yang akan menginstall semua dependencies yang anda butuhkan untuk memulai dalam belajar dan menggunakan TensorFlow untuk Computer Vision, Dockerfile ini telah tersedia perintah-perintah untuk menginstall library seperti: numpy, scipy, scikit-learn, matplotlib, serta OpenCV. **(build succeed on DigitalOcean Server)** untuk GPU support sementara belum di test oleh penulis.
    
    Langkah berikutnya yaitu build image:
 ```sh

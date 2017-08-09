@@ -34,15 +34,17 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 # Python dev:
 DEBIAN_FRONTEND=noninteractive apt-get install -y python3-dev python3-tk
 
-# matplotlib digunakan untuk membuat 2D plots dari array 
-DEBIAN_FRONTEND=noninteractivesudo apt-get build-dep -y python-matplotlib
-DEBIAN_FRONTEND=noninteractivesudo apt-get install -y python-matplotlib
+conda create -n py3 python=3
+source activate py3
 
 conda install -y -c menpo opencv3
-pip install -y scikit-learn Pillow pyreadline pygame
+conda install -y nb_conda
+pip install --no-cache-dir -y scikit-learn pyreadline pygame
 
 DEBIAN_FRONTEND=noninteractive apt-get -y update
 DEBIAN_FRONTEND=noninteractive apt-get install -y libgtk2.0-0
+
+#Cleaning up
 DEBIAN_FRONTEND=noninteractive apt-get clean && \
     rm -rf /var/lib/apt/lists/*
  

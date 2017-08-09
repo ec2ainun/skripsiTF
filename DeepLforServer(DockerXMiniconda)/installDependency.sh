@@ -37,7 +37,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y python3-dev python3-tk
 
 
 conda install -y -c menpo opencv3
-conda install -y nb_conda
+conda install -y nb_conda nb_conda_kernels nb_anacondacloud
 pip install --no-cache-dir -y scikit-learn pyreadline pygame
 
 DEBIAN_FRONTEND=noninteractive apt-get -y update

@@ -34,8 +34,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y libtbb-dev libeigen3-dev
 # Python dev:
 DEBIAN_FRONTEND=noninteractive apt-get install -y python3-dev python3-tk
 
-conda create -n py3 python=3
-source activate py3
+
 
 conda install -y -c menpo opencv3
 conda install -y nb_conda

@@ -10,9 +10,10 @@ RUN apt-get update && apt-get install -y curl
 RUN curl -LO http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 RUN bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda -b
 RUN rm Miniconda3-latest-Linux-x86_64.sh
+ENV PATH=/miniconda/bin:${PATH}
 
-
-RUN conda update conda -y && conda create -y -n py3 python=3
+RUN conda update -y conda 
+RUN conda create -y -n py3 python=3
 ENV PATH=/miniconda/envs/py3/bin:${PATH}
 RUN source activate
 

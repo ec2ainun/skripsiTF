@@ -25,4 +25,4 @@ RUN bash installDependency.sh
 RUN rm -rf /notebooks/*
 ADD *.ipynb /notebooks/
 WORKDIR /notebooks
-CMD ["/run_jupyter.sh"]
+CMD ["/notebooks/jalankan.sh"]

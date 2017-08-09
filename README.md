@@ -19,13 +19,13 @@
    
    Langkah berikutnya yaitu build image:
 ```sh
-   > docker build -t namaImage .
+   > docker build -t nama-image .
    #namaImage bisa anda ganti sesuai interest anda
 ```
    
    Setelah itu run Image yang telah dibuat, dengan cara:
 ```sh
-   > docker run -p 8888:8888 -p 6006:6006 --name namaContainer -it namaImage
+   > docker run -p 8888:8888 -p 6006:6006 --name nama-container -it nama-image
    #namaImage, dan namaContainer bisa anda ganti sesuai interest anda
    # -p digunakan untuk mengekspose port yang mana yang dibuka dan diberi akses dari luar 
 ```

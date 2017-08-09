@@ -15,17 +15,21 @@
    > git clone https://github.com/ec2ainun/skripsiTF.git
 ```
    
-   Langkah selanjutnya yaitu memilih workspace yang tepat bagi anda, masuk ke folder TFcpuPy2+OpenCV untuk membangun arsitektur dengan bahasa python versi 2.7.6 atau masuk ke TFcpuPy3+OpenCV untuk membangun arsitektur dengan bahasa python versi 3.4.3. Didalam kedua folder tersebut telah terdapat Dockerfile yang akan menginstall semua dependencies yang anda butuhkan untuk memulai dalam belajar dan menggunakan TensorFlow untuk Computer Vision, Dockerfile ini telah tersedia perintah-perintah untuk menginstall library seperti: numpy, scipy, scikit-learn, matplotlib, serta OpenCV. **(build succeed on DigitalOcean Server)** untuk GPU support sementara belum di test oleh penulis.
+   ~~Langkah selanjutnya yaitu memilih workspace yang tepat bagi anda, masuk ke folder TFcpuPy2+OpenCV untuk membangun arsitektur dengan bahasa python versi 2.7.6 atau~~
+   
+   [Python2 is deprecated on latest Jupyter Notebook and also version 2 will be shutdown on 2020](http://blog.jupyter.org/2017/04/19/release-of-ipython-6-0/) 
+   
+   Masuk ke TFcpuPy3+OpenCV untuk membangun arsitektur dengan bahasa python versi 3.4.3. Didalam kedua folder tersebut telah terdapat Dockerfile yang akan menginstall semua dependencies yang anda butuhkan untuk memulai dalam belajar dan menggunakan TensorFlow untuk Computer Vision, Dockerfile ini telah tersedia perintah-perintah untuk menginstall library seperti: numpy, scipy, scikit-learn, matplotlib, serta OpenCV. **(build succeed on DigitalOcean Server)** untuk GPU support sementara belum di test oleh penulis.
    
    Langkah berikutnya yaitu build image:
 ```sh
-   > docker build -t namaImage .
+   > docker build -t nama-image .
    #namaImage bisa anda ganti sesuai interest anda
 ```
    
    Setelah itu run Image yang telah dibuat, dengan cara:
 ```sh
-   > docker run -p 8888:8888 -p 6006:6006 --name namaContainer -it namaImage
+   > docker run -p 8888:8888 -p 6006:6006 --name nama-container -it nama-image
    #namaImage, dan namaContainer bisa anda ganti sesuai interest anda
    # -p digunakan untuk mengekspose port yang mana yang dibuka dan diberi akses dari luar 
 ```

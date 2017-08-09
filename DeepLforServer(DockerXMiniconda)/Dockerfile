@@ -1,6 +1,6 @@
 #build docker berdasarkan docker images tensorflow
 #pada build docker ini saya menggunakan images tensorlfow versi terbaru dengan python versi 3
-FROM gcr.io/tensorflow/tensorflow:latest-py3
+FROM ubuntu:16.04
 #untuk build docker dengan penggunaan hardware GPU bisa menggunakan
 #FROM gcr.io/tensorflow/tensorflow:latest-gpu
 #untuk infromasi lebih lanjut dapat mengunjungi https://hub.docker.com/r/tensorflow/tensorflow/
@@ -14,7 +14,7 @@ ENV PATH=/miniconda/bin:${PATH}
 
 RUN conda update -y conda 
 RUN conda create -y -n py3 python=3
-ENV PATH=/miniconda/envs/py3/bin:${PATH}
+ENV PATH=/miniconda/envs/py3:${PATH}
 RUN /bin/bash -c "source /miniconda/envs/py3/bin/activate"
 #RUN source activate py3
 

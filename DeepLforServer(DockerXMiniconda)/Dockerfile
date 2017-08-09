@@ -6,6 +6,8 @@ FROM gcr.io/tensorflow/tensorflow:latest-py3
 #untuk infromasi lebih lanjut dapat mengunjungi https://hub.docker.com/r/tensorflow/tensorflow/
 MAINTAINER Moch. Ainun Najib <m.ec2.a.najib@gmail.com>
 RUN apt-get update && apt-get install -y curl
+# Force bash always
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Install miniconda to /miniconda
 RUN curl -LO http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 RUN bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda -b
@@ -22,8 +24,8 @@ RUN /bin/bash -c "source /miniconda/envs/py3/bin/activate py3"
 ADD *.sh /installOpen/
 ADD *.py /installOpen/
 WORKDIR /installOpen
-RUN /bin/bash -c "installDependency.sh"
-#RUN bash installDependency.sh 
+#RUN .installDependency.sh
+RUN bash installDependency.sh 
 RUN rm -rf /notebooks/*
 ADD *.ipynb /notebooks/
 WORKDIR /notebooks

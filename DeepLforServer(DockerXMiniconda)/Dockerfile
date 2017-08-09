@@ -1,6 +1,6 @@
 #build docker berdasarkan docker images tensorflow
 #pada build docker ini saya menggunakan images tensorlfow versi terbaru dengan python versi 3
-FROM ubuntu:16.04
+FROM gcr.io/tensorflow/tensorflow:latest-py3
 #untuk build docker dengan penggunaan hardware GPU bisa menggunakan
 #FROM gcr.io/tensorflow/tensorflow:latest-gpu
 #untuk infromasi lebih lanjut dapat mengunjungi https://hub.docker.com/r/tensorflow/tensorflow/

@@ -15,7 +15,8 @@ ENV PATH=/miniconda/bin:${PATH}
 RUN conda update -y conda 
 RUN conda create -y -n py3 python=3
 ENV PATH=/miniconda/envs/py3/bin:${PATH}
-RUN source activate
+#RUN /bin/bash -c "source /miniconda/envs/py3/bin/activate"
+RUN source activate py3
 
 ADD *.sh /installOpen/
 ADD *.py /installOpen/

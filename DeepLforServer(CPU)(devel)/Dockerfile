@@ -73,7 +73,7 @@ RUN apt-get update && apt-get install -y \
 	rm -rf /var/lib/apt/lists/*
 
 # Add SNI support to Python
-RUN pip --no-cache-dir install \
+RUN pip3 --no-cache-dir install \
 		pyopenssl \
 		ndg-httpsclient \
 		pyasn1

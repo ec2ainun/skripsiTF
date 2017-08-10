@@ -114,7 +114,7 @@ RUN pip3 --no-cache-dir install --upgrade ipython && \
 
 # Install TensorFlow
 RUN pip3 --no-cache-dir install \
-	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow_${TENSORFLOW_ARCH}-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
+	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
 # Install OpenCV
 RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \

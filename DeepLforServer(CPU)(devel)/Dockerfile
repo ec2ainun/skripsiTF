@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 		liblcms2-dev \
 		libopenblas-dev \
 		liblapack-dev \
-		libopenjpeg2 \
+		libopenjpeg5 \
 		libpng12-dev \
 		libssl-dev \
 		libtiff5-dev \

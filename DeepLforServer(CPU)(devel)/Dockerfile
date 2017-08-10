@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER Moch. Ainun Najib <m.ec2.a.najib@gmail.com>
 
-ARG TENSORFLOW_VERSION=latest
+ARG TENSORFLOW_VERSION=1.2.0
 ARG TENSORFLOW_ARCH=cpu
 
 # Install dependencies
@@ -72,6 +72,7 @@ RUN apt-get update && apt-get install -y \
 	apt-get autoremove && \
 	rm -rf /var/lib/apt/lists/*
 
+RUN pip3 install --upgrade pip
 # Add SNI support to Python
 RUN pip3 --no-cache-dir install \
 		pyopenssl \
@@ -109,11 +110,11 @@ RUN pip3 --no-cache-dir install --upgrade ipython && \
 		wheel \
 		zmq \
 		&& \
-	python -m ipykernel.kernelspec
+	python3 -m ipykernel.kernelspec
 
 # Install TensorFlow
 RUN pip3 --no-cache-dir install \
-	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow_${TENSORFLOW_ARCH}-${TENSORFLOW_VERSION}-cp36-cp36m-linux_x86_64.whl
+	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow_${TENSORFLOW_ARCH}-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
 # Install OpenCV
 RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \

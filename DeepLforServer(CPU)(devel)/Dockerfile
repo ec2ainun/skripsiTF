@@ -70,7 +70,7 @@ RUN apt-get update && apt-get install -y \
 		&& \
 	apt-get clean && \
 	apt-get autoremove && \
-	rm -rf /var/lib/apt/lists/* && \
+	rm -rf /var/lib/apt/lists/*
 
 # Add SNI support to Python
 RUN pip --no-cache-dir install \
@@ -81,15 +81,15 @@ RUN pip --no-cache-dir install \
 # Install useful Python packages using apt-get to avoid version incompatibilities with Tensorflow binary
 # especially numpy, scipy, skimage and sklearn (see https://github.com/tensorflow/tensorflow/issues/2034)
 RUN apt-get update && apt-get install -y \
-		python-numpy \
-		python-scipy \
-		python-nose \
-		python-h5py \
-		python-skimage \
-		python-matplotlib \
-		python-pandas \
-		python-sklearn \
-		python-sympy \
+		python3-numpy \
+		python3-scipy \
+		python3-nose \
+		python3-h5py \
+		python3-skimage \
+		python3-matplotlib \
+		python3-pandas \
+		python3-sklearn \
+		python3-sympy \
 		&& \
 	apt-get clean && \
 	apt-get autoremove && \
@@ -133,5 +133,6 @@ COPY jupyter_notebook_config.py /root/.jupyter/
 COPY jalankan.sh /root/
 
 EXPOSE 6006 8888
+ADD *.ipynb /notebooks/
 WORKDIR /notebooks
 CMD ["~/jalankan.sh"]

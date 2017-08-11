@@ -1,14 +1,8 @@
 FROM ubuntu:16.04 
-
 MAINTAINER Moch. Ainun Najib <m.ec2.a.najib@gmail.com>
 
 ARG TENSORFLOW_VERSION=1.2.0
 ARG TENSORFLOW_ARCH=cpu
-
-ENV CPUCOUNT 1
-RUN CPUCOUNT=$(cat /proc/cpuinfo | grep '^processor.*:' | wc -l)
-ENV OPENCV_VERSION 3.1.0
-
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -84,7 +78,7 @@ RUN pip3 --no-cache-dir install \
 		ndg-httpsclient \
 		pyasn1 
 
-# Install other useful Python packages using pip
+# Install other useful Python packages using pip3
 RUN pip3 --no-cache-dir install --upgrade ipython && \
 	pip3 --no-cache-dir install \
 		Cython \
@@ -124,12 +118,10 @@ RUN pip3 --no-cache-dir install \
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/
-
 COPY jalankan.sh /root/
-
 EXPOSE 6006 8888
 ADD *.ipynb /notebooks/
 WORKDIR /notebooks
 RUN chmod +x /root/jalankan.sh
-#CMD ["/bin/bash"]
+
 CMD ["/root/jalankan.sh"]

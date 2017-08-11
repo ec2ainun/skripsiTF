@@ -77,24 +77,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 --no-cache-dir install \
 		pyopenssl \
 		ndg-httpsclient \
-		pyasn1
-
-# Install useful Python packages using apt-get to avoid version incompatibilities with Tensorflow binary
-# especially numpy, scipy, skimage and sklearn (see https://github.com/tensorflow/tensorflow/issues/2034)
-RUN apt-get update && apt-get install -y \
-		python3-numpy \
-		python3-scipy \
-		python3-nose \
-		python3-h5py \
-		python3-skimage \
-		python3-matplotlib \
-		python3-pandas \
-		python3-sklearn \
-		python3-sympy \
-		&& \
-	apt-get clean && \
-	apt-get autoremove && \
-	rm -rf /var/lib/apt/lists/*
+		pyasn1 
 
 # Install other useful Python packages using pip
 RUN pip3 --no-cache-dir install --upgrade ipython && \
@@ -104,13 +87,29 @@ RUN pip3 --no-cache-dir install --upgrade ipython && \
 		jupyter \
 		path.py \
 		Pillow \
+		h5py \
 		pygments \
 		six \
 		sphinx \
 		wheel \
 		zmq \
+		matplotlib \
+        numpy \
+        pandas \
+		scipy \
+		scikit-learn \
 		&& \
 	python3 -m ipykernel.kernelspec
+
+RUN apt-get update && apt-get install -y \
+		python3-nose \
+		python3-skimage \
+		python3-sympy \
+		&& \
+	apt-get clean && \
+	apt-get autoremove && \
+	rm -rf /var/lib/apt/lists/*
+
 
 # Install TensorFlow
 RUN pip3 --no-cache-dir install \
@@ -136,4 +135,5 @@ COPY jalankan.sh /root/
 EXPOSE 6006 8888
 ADD *.ipynb /notebooks/
 WORKDIR /notebooks
-CMD ["/bin/bash"]
+#CMD ["/bin/bash"]
+CMD ["/root/jalankan.sh"]

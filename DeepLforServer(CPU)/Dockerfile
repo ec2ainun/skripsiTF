@@ -1,5 +1,4 @@
 FROM ubuntu:16.04 
-
 MAINTAINER Moch. Ainun Najib <m.ec2.a.najib@gmail.com>
 
 ARG TENSORFLOW_VERSION=1.2.0
@@ -73,30 +72,14 @@ RUN apt-get update && apt-get install -y \
 	rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip
+
 # Add SNI support to Python
 RUN pip3 --no-cache-dir install \
 		pyopenssl \
 		ndg-httpsclient \
-		pyasn1
+		pyasn1 
 
-# Install useful Python packages using apt-get to avoid version incompatibilities with Tensorflow binary
-# especially numpy, scipy, skimage and sklearn (see https://github.com/tensorflow/tensorflow/issues/2034)
-RUN apt-get update && apt-get install -y \
-		python3-numpy \
-		python3-scipy \
-		python3-nose \
-		python3-h5py \
-		python3-skimage \
-		python3-matplotlib \
-		python3-pandas \
-		python3-sklearn \
-		python3-sympy \
-		&& \
-	apt-get clean && \
-	apt-get autoremove && \
-	rm -rf /var/lib/apt/lists/*
-
-# Install other useful Python packages using pip
+# Install other useful Python packages using pip3
 RUN pip3 --no-cache-dir install --upgrade ipython && \
 	pip3 --no-cache-dir install \
 		Cython \
@@ -104,36 +87,42 @@ RUN pip3 --no-cache-dir install --upgrade ipython && \
 		jupyter \
 		path.py \
 		Pillow \
+		h5py \
 		pygments \
 		six \
 		sphinx \
 		wheel \
 		zmq \
+		matplotlib \
+        numpy \
+        pandas \
+		scipy \
+		scikit-learn \
+		opencv-contrib-python \
 		&& \
 	python3 -m ipykernel.kernelspec
+
+RUN apt-get update && apt-get install -y \
+		python3-nose \
+		python3-skimage \
+		python3-sympy \
+		&& \
+	apt-get clean && \
+	apt-get autoremove && \
+	rm -rf /var/lib/apt/lists/*
+
 
 # Install TensorFlow
 RUN pip3 --no-cache-dir install \
 	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
-# Install OpenCV
-RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
-	cd /root/opencv && \
-	mkdir build && \
-	cd build && \
-	cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
-	make -j"$(nproc)"  && \
-	make install && \
-	ldconfig && \
-	echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/
-
-# Jupyter has issues with being run directly: https://github.com/ipython/ipython/issues/7062
 COPY jalankan.sh /root/
-
 EXPOSE 6006 8888
 ADD *.ipynb /notebooks/
 WORKDIR /notebooks
-CMD ["/jalankan.sh"]
+RUN chmod +x /root/jalankan.sh
+
+CMD ["/root/jalankan.sh"]

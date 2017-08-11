@@ -103,6 +103,7 @@ RUN pip3 --no-cache-dir install --upgrade ipython && \
         pandas \
 		scipy \
 		scikit-learn \
+		opencv-contrib-python \
 		&& \
 	python3 -m ipykernel.kernelspec
 
@@ -120,42 +121,6 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 --no-cache-dir install \
 	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
-# Install OpenCV
-#RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
-#	cd /root/opencv && \
-#	mkdir build && \
-#	cd build && \
-#	cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
-#	make -j"$(nproc)"  && \
-#	make install && \
-#	ldconfig && \
-#	echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
-RUN cd /opt/ && \
-	git clone https://github.com/Itseez/opencv.git && \
-	git clone https://github.com/Itseez/opencv_contrib.git && \
-	cd opencv && \
-	git checkout ${OPENCV_VERSION} && \
-	cd ../opencv_contrib && \
-	git checkout ${OPENCV_VERSION}
-
-RUN mkdir -p /opt/opencv/build && \
-	cd /opt/opencv/build && \
-	cmake -D CMAKE_BUILD_TYPE=RELEASE \
-		-D CMAKE_INSTALL_PREFIX=/usr/local \
-		# -D INSTALL_C_EXAMPLES=ON \
-		# -D INSTALL_PYTHON_EXAMPLES=ON \
-		-D OPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \
-		# -D BUILD_EXAMPLES=ON \
-		.. && \
-	make -j${CPUCOUNT} && \
-	make install && \
-	ldconfig
-# now clean up the unwanted source to keep image size to a minimum
-RUN cd /opt && \
-	rm -rf /opt/opencv && \
-	rm -rf /opt/opencv_contrib && \
-	apt-get purge -y cmake && \
-	apt-get autoremove -y --purge
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/

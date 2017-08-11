@@ -116,15 +116,15 @@ RUN pip3 --no-cache-dir install \
 	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
 # Install OpenCV
-RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
-	cd /root/opencv && \
-	mkdir build && \
-	cd build && \
-	cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
-	make -j"$(nproc)"  && \
-	make install && \
-	ldconfig && \
-	echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
+#RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
+#	cd /root/opencv && \
+#	mkdir build && \
+#	cd build && \
+#	cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
+#	make -j"$(nproc)"  && \
+#	make install && \
+#	ldconfig && \
+#	echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/

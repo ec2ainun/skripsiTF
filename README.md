@@ -39,8 +39,13 @@
    #namaImage, dan namaContainer bisa anda ganti sesuai interest anda
    # -p digunakan untuk mengekspose port yang mana yang dibuka dan diberi akses dari luar 
 ```
+   Anda dapat melewati 2 langkah diatas dengan cara:
+```sh
+   >  docker run -it -p 8888:8888 -p 6006:6006 ec2ainun/tf-opencv-jupyter:py3-cpu
+   #command tersebut untuk mendapatkan docker image dari docker hub yang telah dibuat
+```
 
-   akses pada browser anda, jika anda menginstall docker pada laptop atau komputer anda, silahkan kunjungi
+   Setelah itu, akses pada browser anda, jika anda menginstall docker pada laptop atau komputer anda, silahkan kunjungi
 ```sh
    > localhost:8888
 ```

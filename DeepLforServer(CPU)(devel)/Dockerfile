@@ -136,4 +136,4 @@ COPY jalankan.sh /root/
 EXPOSE 6006 8888
 ADD *.ipynb /notebooks/
 WORKDIR /notebooks
-CMD ["/jalankan.sh"]
+CMD ["/bin/bash"]

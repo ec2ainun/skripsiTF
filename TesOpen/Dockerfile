@@ -92,32 +92,32 @@ RUN pip3 --no-cache-dir install \
 #	make install && \
 #	ldconfig && \
 #	echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
-RUN cd /opt/ && \
-	git clone https://github.com/Itseez/opencv.git && \
-	git clone https://github.com/Itseez/opencv_contrib.git && \
-	cd opencv && \
-	git checkout ${OPENCV_VERSION} && \
-	cd ../opencv_contrib && \
-	git checkout ${OPENCV_VERSION}
+#RUN cd /opt/ && \
+#	git clone https://github.com/Itseez/opencv.git && \
+#	git clone https://github.com/Itseez/opencv_contrib.git && \
+#	cd opencv && \
+#	git checkout ${OPENCV_VERSION} && \
+#	cd ../opencv_contrib && \
+#	git checkout ${OPENCV_VERSION}
 
-RUN mkdir -p /opt/opencv/build && \
-	cd /opt/opencv/build && \
-	cmake -D CMAKE_BUILD_TYPE=RELEASE \
-		-D CMAKE_INSTALL_PREFIX=/usr/local \
-		# -D INSTALL_C_EXAMPLES=ON \
-		# -D INSTALL_PYTHON_EXAMPLES=ON \
-		-D OPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \
-		# -D BUILD_EXAMPLES=ON \
-		.. && \
-	make -j${CPUCOUNT} && \
-	make install && \
-	ldconfig
+#RUN mkdir -p /opt/opencv/build && \
+#	cd /opt/opencv/build && \
+#	cmake -D CMAKE_BUILD_TYPE=RELEASE \
+#		-D CMAKE_INSTALL_PREFIX=/usr/local \
+#		# -D INSTALL_C_EXAMPLES=ON \
+#		# -D INSTALL_PYTHON_EXAMPLES=ON \
+#		-D OPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \
+#		# -D BUILD_EXAMPLES=ON \
+#		.. && \
+#	make -j${CPUCOUNT} && \
+#	make install && \
+#	ldconfig
 # now clean up the unwanted source to keep image size to a minimum
-RUN cd /opt && \
-	rm -rf /opt/opencv && \
-	rm -rf /opt/opencv_contrib && \
-	apt-get purge -y cmake && \
-	apt-get autoremove -y --purge
+#RUN cd /opt && \
+#	rm -rf /opt/opencv && \
+#	rm -rf /opt/opencv_contrib && \
+#	apt-get purge -y cmake && \
+#	apt-get autoremove -y --purge
 
 CMD ["/bin/bash"]
 #CMD ["/root/jalankan.sh"]

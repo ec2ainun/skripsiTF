@@ -135,5 +135,6 @@ COPY jalankan.sh /root/
 EXPOSE 6006 8888
 ADD *.ipynb /notebooks/
 WORKDIR /notebooks
+RUN chmod +x /root/jalankan.sh
 #CMD ["/bin/bash"]
 CMD ["/root/jalankan.sh"]

@@ -1,8 +1,8 @@
-FROM ubuntu:16.04 
+FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
 MAINTAINER Moch. Ainun Najib <ec2ainun@gmail.com>
 
 ARG TENSORFLOW_VERSION=1.2.0
-ARG TENSORFLOW_ARCH=cpu
+ARG TENSORFLOW_ARCH=gpu
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -114,7 +114,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install TensorFlow
 RUN pip3 --no-cache-dir install \
-	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
+	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow_gpu-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
 
 # Set up notebook config

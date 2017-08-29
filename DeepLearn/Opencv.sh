@@ -1,6 +1,6 @@
-wget https://github.com/opencv/opencv/archive/3.2.0.zip
-unzip 3.2.0.zip
-cd opencv-3.2.0/
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+cd opencv/
 mkdir build
 cd build/    
 cmake -DCMAKE_BUILD_TYPE=RELEASE \
@@ -14,8 +14,9 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
     -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" \
     -DWITH_GDAL=ON \
     -DWITH_XINE=ON \
+    -DOPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \
     -DBUILD_EXAMPLES=ON ..
-make -j4
+make -j $(($(nproc) + 1))
 make install
 /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
 ldconfig

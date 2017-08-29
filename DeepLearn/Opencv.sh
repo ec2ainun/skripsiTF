@@ -11,7 +11,6 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
     -DWITH_QT=ON \
     -DWITH_OPENGL=ON \
     -DWITH_CUBLAS=ON \
-    -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" \
     -DWITH_GDAL=ON \
     -DWITH_XINE=ON \
     -DOPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \

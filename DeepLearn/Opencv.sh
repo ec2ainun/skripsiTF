@@ -11,8 +11,10 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
     -DWITH_QT=ON \
     -DWITH_OPENGL=ON \
     -DWITH_CUBLAS=ON \
+    -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" \
     -DWITH_GDAL=ON \
     -DWITH_XINE=ON \
+    -DCUDA_CUDA_LIBRARY=/usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs/libcuda.so \
     -DOPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \
     -DBUILD_EXAMPLES=ON ..
 make -j $(($(nproc) + 1))

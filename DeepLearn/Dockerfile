@@ -13,19 +13,6 @@ RUN apt-get update && apt-get install -y \
 		g++ \
 		gfortran \
 		git \
-		libffi-dev \
-		libfreetype6-dev \
-		libhdf5-dev \
-		libjpeg-dev \
-		liblcms2-dev \
-		libopenblas-dev \
-		liblapack-dev \
-		libopenjpeg5 \
-		libpng12-dev \
-		libssl-dev \
-		libtiff5-dev \
-		libwebp-dev \
-		libzmq3-dev \
 		nano \
 		pkg-config \
 		python-dev \
@@ -33,32 +20,7 @@ RUN apt-get update && apt-get install -y \
 		unzip \
 		vim \
 		wget \
-		zlib1g-dev \
-		qt5-default \
-		libvtk6-dev \
-		zlib1g-dev \
-		libjpeg-dev \
-		libwebp-dev \
-		libpng-dev \
-		libtiff5-dev \
-		libjasper-dev \
-		libopenexr-dev \
-		libgdal-dev \
-		libdc1394-22-dev \
-		libavcodec-dev \
-		libavformat-dev \
-		libswscale-dev \
-		libtheora-dev \
-		libvorbis-dev \
-		libxvidcore-dev \
-		libx264-dev \
 		yasm \
-		libopencore-amrnb-dev \
-		libopencore-amrwb-dev \
-		libv4l-dev \
-		libxine2-dev \
-		libtbb-dev \
-		libeigen3-dev \
 		python3-dev \
 		python3-tk \
 		python3-numpy \
@@ -68,15 +30,49 @@ RUN apt-get update && apt-get install -y \
 		doxygen \
 		ffmpeg \
 		qtbase5-dev \
+		qt5-default \
+		libssl-dev \
+		libffi-dev \
+		libfreetype6-dev \
+		libhdf5-dev \
+		liblcms2-dev \
+		libwebp-dev \
+		libzmq3-dev \
 		libopencv-dev \
 		libgtk-3-dev \ 
+		libdc1394-22 \
+		libdc1394-22-dev \
+		libjpeg-dev \
+		libopenjpeg5 \
+		libpng12-dev \
+		libpng-dev \
+		libtiff5-dev \
+		libjasper-dev \
+		libavcodec-dev \
+		libavformat-dev \
+		libswscale-dev \
+		libxine2-dev \
 		libgstreamer0.10-dev \
 		libgstreamer-plugins-base0.10-dev \
+		libv4l-dev \
+		libtbb-dev \
+		libeigen3-dev \
 		libfaac-dev \
 		libmp3lame-dev \
+		libopencore-amrnb-dev \
+		libopencore-amrwb-dev \
+		libtheora-dev \
+		libvorbis-dev \
+		libxvidcore-dev \
 		v4l-utils \
-		python-vtk \
+		libvtk6-dev \
+		zlib1g-dev \
+		libx264-dev \
 		liblapacke-dev \
+		libopenblas-dev \
+		liblapack-dev \
+		libopenexr-dev \
+		libgdal-dev \
 		checkinstall \
 		&& \
 	apt-get clean && \
@@ -122,13 +118,12 @@ RUN apt-get update && apt-get install -y \
 	apt-get autoremove && \
 	rm -rf /var/lib/apt/lists/*
 
-
 # Install TensorFlow
 RUN pip3 --no-cache-dir install \
 	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow_gpu-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
 # Install Opencv
-bash Opencv.sh
+RUN bash Opencv.sh
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/

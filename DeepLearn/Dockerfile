@@ -122,6 +122,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 --no-cache-dir install \
 	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow_gpu-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
+ADD *.sh
 # Install Opencv
 RUN bash Opencv.sh
 

@@ -1,5 +1,5 @@
 wget https://github.com/opencv/opencv/archive/3.2.0.zip
-unzip opencv-3.2.0.zip
+unzip 3.2.0.zip
 cd opencv-3.2.0/
 mkdir build
 cd build/    

@@ -1,23 +1,23 @@
-cd ~
 git clone --branch 3.3.0 --depth 1 https://github.com/opencv/opencv.git
 git clone --branch 3.3.0 --depth 1 https://github.com/opencv/opencv_contrib.git
-cd ~/opencv/
+cd opencv/
 mkdir build
 cd build/    
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D FORCE_VTK=ON \
-    -D WITH_TBB=ON \
-    -D WITH_V4L=ON \
-    -D WITH_QT=ON \
-    -D WITH_OPENGL=ON \
-    -D WITH_CUBLAS=ON \
-    -D CUDA_NVCC_FLAGS="-D_FORCE_INLINES" \
-    -D WITH_GDAL=ON \
-    -D WITH_XINE=ON \
-    -D CUDA_CUDA_LIBRARY=/usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs/libcuda.so \
-    -D OPENCV_EXTRA_MODULES_PATH= ~/opencv_contrib/modules/ \
-    -D BUILD_EXAMPLES=ON ..
+cmake 
+    -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ \
+    -DCMAKE_BUILD_TYPE=RELEASE \
+    -DCMAKE_INSTALL_PREFIX=$(python3 -c "import sys; print(sys.prefix)") \
+    -DFORCE_VTK=ON \
+    -DWITH_TBB=ON \
+    -DWITH_V4L=ON \
+    -DWITH_QT=ON \
+    -DWITH_OPENGL=ON \
+    -DWITH_CUBLAS=ON \
+    -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" \
+    -DWITH_GDAL=ON \
+    -DWITH_XINE=ON \
+    -DCUDA_CUDA_LIBRARY=/usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs/libcuda.so ..
+
 make -j $(($(nproc) + 1))
 make install
 /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'

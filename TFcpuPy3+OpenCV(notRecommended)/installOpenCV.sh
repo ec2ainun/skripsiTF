@@ -45,20 +45,17 @@ DEBIAN_FRONTEND=noninteractivesudo apt-get build-dep -y python-matplotlib
 DEBIAN_FRONTEND=noninteractivesudo apt-get install -y python-matplotlib
 
 # Mendapatkan library openCV dari Github dengan vers 3.1.0
-wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
-unzip opencv.zip
-wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
-unzip opencv_contrib.zip
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
 
-cd opencv-3.1.0/
+cd opencv/
 mkdir build
-cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D INSTALL_PYTHON_EXAMPLES=ON \
-    -D INSTALL_C_EXAMPLES=OFF \
-    -D OPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib-3.1.0/modules \
-    -D BUILD_EXAMPLES=ON ..
+cd build/
+cmake -DCMAKE_BUILD_TYPE=RELEASE \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DINSTALL_PYTHON_EXAMPLES=ON \
+    -DOPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \
+    -DBUILD_EXAMPLES=ON ..
 make -j2
 #ubah menjadi -j4 untuk 4 core processor
 #make -j4

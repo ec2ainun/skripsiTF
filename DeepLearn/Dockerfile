@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
+FROM nvidia/cuda:8.0-cudnn7-runtime-ubuntu16.04
 MAINTAINER Moch. Ainun Najib <ec2ainun@gmail.com>
 
 ARG TENSORFLOW_VERSION=1.2.0

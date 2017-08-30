@@ -3,7 +3,7 @@ git clone --branch 3.3.0 --depth 1 https://github.com/opencv/opencv_contrib.git
 cd opencv/
 mkdir build
 cd build/    
-cmake 
+cmake \ 
     -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ \
     -DCMAKE_BUILD_TYPE=RELEASE \
     -DCMAKE_INSTALL_PREFIX=/usr/local \

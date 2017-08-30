@@ -1,10 +1,7 @@
 cd ~
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
-cd ~/opencv_contrib/
-git checkout 3.3.0
+git clone --branch 3.3.0 --depth 1 https://github.com/opencv/opencv.git
+git clone --branch 3.3.0 --depth 1 https://github.com/opencv/opencv_contrib.git
 cd ~/opencv/
-git checkout 3.3.0
 mkdir build
 cd build/    
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -19,7 +16,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D WITH_GDAL=ON \
     -D WITH_XINE=ON \
     -D CUDA_CUDA_LIBRARY=/usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs/libcuda.so \
-    -D OPENCV_EXTRA_MODULES_PATH= ~/opencv_contrib/modules \
+    -D OPENCV_EXTRA_MODULES_PATH= ~/opencv_contrib/modules/ \
     -D BUILD_EXAMPLES=ON ..
 make -j $(($(nproc) + 1))
 make install

@@ -1,9 +1,9 @@
+cd ~
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
-cd opencv_contrib/
+cd ~/opencv_contrib/
 git checkout 3.3.0
-cd /
-cd opencv/
+cd ~/opencv/
 git checkout 3.3.0
 mkdir build
 cd build/    
@@ -19,7 +19,7 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
     -DWITH_GDAL=ON \
     -DWITH_XINE=ON \
     -DCUDA_CUDA_LIBRARY=/usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs/libcuda.so \
-    -DOPENCV_EXTRA_MODULES_PATH= ../../opencv_contrib/modules \
+    -DOPENCV_EXTRA_MODULES_PATH= ~/opencv_contrib/modules \
     -DBUILD_EXAMPLES=ON ..
 make -j $(($(nproc) + 1))
 make install

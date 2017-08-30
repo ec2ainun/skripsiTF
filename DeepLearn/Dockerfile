@@ -38,7 +38,6 @@ RUN apt-get update && apt-get install -y \
 		liblcms2-dev \
 		libwebp-dev \
 		libzmq3-dev \
-		libopencv-dev \
 		libgtk-3-dev \ 
 		libdc1394-22 \
 		libdc1394-22-dev \

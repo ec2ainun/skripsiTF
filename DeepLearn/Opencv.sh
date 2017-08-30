@@ -1,6 +1,10 @@
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
+cd opencv_contrib/
+git checkout 3.3.0
+cd /
 cd opencv/
+git checkout 3.3.0
 mkdir build
 cd build/    
 cmake -DCMAKE_BUILD_TYPE=RELEASE \

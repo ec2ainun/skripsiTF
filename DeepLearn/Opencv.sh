@@ -6,7 +6,7 @@ cd build/
 cmake 
     -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules/ \
     -DCMAKE_BUILD_TYPE=RELEASE \
-    -DCMAKE_INSTALL_PREFIX=$(python3 -c "import sys; print(sys.prefix)") \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
     -DFORCE_VTK=ON \
     -DWITH_TBB=ON \
     -DWITH_V4L=ON \

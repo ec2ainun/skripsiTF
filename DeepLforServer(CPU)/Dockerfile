@@ -98,7 +98,6 @@ RUN pip3 --no-cache-dir install --upgrade ipython && \
         pandas \
 		scipy \
 		scikit-learn \
-		opencv-contrib-python \
 		&& \
 	python3 -m ipykernel.kernelspec
 
@@ -116,6 +115,9 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 --no-cache-dir install \
 	https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
+ADD *.sh /
+# Install Opencv
+RUN bash Opencv.sh
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/

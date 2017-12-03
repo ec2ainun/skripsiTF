@@ -1,6 +1,8 @@
 FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
 MAINTAINER Moch. Ainun Najib <ec2ainun@gmail.com>
 
+#if try to change the available version
+#https://www.tensorflow.org/install/install_linux#the_url_of_the_tensorflow_python_package
 ARG TENSORFLOW_VERSION=1.4.0
 ARG TENSORFLOW_ARCH=gpu
 

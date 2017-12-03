@@ -1,3 +1,5 @@
+#if try to change the available cuda and cudnn version
+#https://hub.docker.com/r/nvidia/cuda/
 FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
 MAINTAINER Moch. Ainun Najib <ec2ainun@gmail.com>
 
